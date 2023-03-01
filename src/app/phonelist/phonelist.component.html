@@ -8,10 +8,11 @@
 
 <p id="sorter-title">Sort by:</p>
 
-<select name="sortList" id="sortList">
-    <option value="newest">Newest</option>
+<select (change)="sortData($any($event.target).value)">
     <option value="oldest">Oldest</option>
-    <option value="alphabetical">Alphabetical</option>
+    <option value="newest">Newest</option>
+    <option value="asc">Alphabetical (A to Z)</option>
+    <option value="desc">Alphabetical (Z to A)</option>
 </select>
 
 </aside>

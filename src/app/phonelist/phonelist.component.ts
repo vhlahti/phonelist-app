@@ -18,12 +18,29 @@ export class PhonelistComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.phoneService.getAllProducts().subscribe((data) => {this.productList = data;
+    this.phoneService.getAllProducts().subscribe((data) => {
+      this.data = data;
+      this.productList = this.data.sort((a, b) => a.age - b.age);
     },
     (error) => {
       console.log('http-error:');
       console.log(error);
     });
+  }
+
+  sortData(direction: string) {
+    if (direction === 'newest') {
+      this.productList = this.data.sort((a, b) => b.age - a.age);
+    }
+    else if (direction === 'oldest') {
+      this.productList = this.data.sort((a, b) => a.age - b.age);
+    }
+    else if (direction === 'asc') {
+      this.productList = this.data.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    else if (direction === 'desc') {
+      this.productList = this.data.sort((a, b) => b.name.localeCompare(a.name));
+    }
   }
 
 }
