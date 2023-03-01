@@ -1,17 +1,14 @@
 <section *ngFor="let product of (products|async)">
 
-    <p>{{ product.name }}</p>
-    <p>{{ product.id }}</p>
-
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="../../assets/img/phones/motorola-xoom-with-wi-fi.0.jpg" class="img-fluid rounded-start" alt="...">
+        <img src="assets/{{ product.imageUrl }}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.id }}</p>
+          <p class="card-text">{{ product.snippet }}</p>
         </div>
       </div>
     </div>
