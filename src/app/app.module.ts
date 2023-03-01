@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PhonelistComponent } from './phonelist/phonelist.component';
 import { PhoneDetailComponent } from './phonelist/phone-detail/phone-detail.component';
 import { PhoneService } from './phone.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PhoneService } from './phone.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [PhoneService],
   bootstrap: [AppComponent]

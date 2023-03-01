@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { PhoneService } from '../phone.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class PhonelistComponent implements OnInit {
 
   data: any[];
   productList: any[];
+  searchTerm: string = '';
   
   constructor(private phoneService: PhoneService) {}
 
@@ -41,6 +42,19 @@ export class PhonelistComponent implements OnInit {
     else if (direction === 'desc') {
       this.productList = this.data.sort((a, b) => b.name.localeCompare(a.name));
     }
+  }
+
+  // search filter
+
+  @Output()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  onSearchTextChanged() {
+    this.searchTextChanged.emit(this.searchTerm);
+  }
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchTerm = searchValue;
   }
 
 }

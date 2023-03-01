@@ -2,25 +2,28 @@
 
 <aside class="left-column">
 
+<div class="search-container">
 <p id="search-title">Search:</p>
+<input type="text" [(ngModel)]="searchTerm" (input)="onSearchTextChanged()">
+</div>
 
-<input type="text">
-
+<div class="sorter-container">
 <p id="sorter-title">Sort by:</p>
-
 <select (change)="sortData($any($event.target).value)">
     <option value="oldest">Oldest</option>
     <option value="newest">Newest</option>
     <option value="asc">Alphabetical (A to Z)</option>
     <option value="desc">Alphabetical (Z to A)</option>
 </select>
+</div>
 
 </aside>
 
 <main class="right-column">
 
 <div *ngFor="let product of productList">
-<div class="card mb-3" style="max-width: 540px;">
+  <div *ngIf="searchTerm === '' || product.name.toLowerCase().includes(searchTerm)">
+  <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{{ 'assets/' + product.imageUrl }}" class="img-fluid rounded-start" alt="...">
@@ -31,6 +34,7 @@
           <p class="card-text">{{ product.snippet }}</p>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </div>
