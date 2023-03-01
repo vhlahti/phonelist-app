@@ -1,5 +1,23 @@
-<section *ngFor="let product of (products|async)">
+<section class="container">
 
+<aside class="left-column">
+
+<p id="search-title">Search:</p>
+
+<input type="text">
+
+<p id="sorter-title">Sort by:</p>
+
+<select name="sortList" id="sortList">
+    <option value="newest">Newest</option>
+    <option value="oldest">Oldest</option>
+</select>
+
+</aside>
+
+<main class="right-column">
+
+<div *ngFor="let product of (products|async)">
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
@@ -13,5 +31,8 @@
       </div>
     </div>
   </div>
+</div>
+
+</main>
 
 </section>

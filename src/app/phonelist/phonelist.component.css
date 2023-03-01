@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.left-column {
+    padding: 1rem;
+}
+.right-column {
+    padding: 1rem;
+    flex-wrap: nowrap;
+}
+#search-title, #sorter-title {
+    margin-bottom: 0.5rem;
+}
+#sorter-title {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+  /* Media Query for Mobile Large */
+  @media (max-width: 425px) {
+    .container {
+        flex-direction: column;
+    }
+}
