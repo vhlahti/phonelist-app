@@ -10,13 +10,11 @@ export class PhoneService {
   constructor(private http: HttpClient) { }
 
   getAllProducts(): any {
-    const products = this.http.get('assets/phones/phones.json');
-    return products;
+    return this.http.get('assets/phones/phones.json');
   }
 
   getProduct(id: string): any {
-    const product = this.http.get('assets/phones/' + id + '.json');
-    return product;
+    return this.http.get('assets/phones/' + id + '.json');
   }
   
 }
