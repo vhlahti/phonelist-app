@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PhoneService } from 'src/app/phone.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-phone-detail',
@@ -12,6 +13,8 @@ export class PhoneDetailComponent implements OnInit {
 
   phoneId: string;
   chosenPhone: any;
+  faCheck = faCheck;
+  faXmark = faXmark;
 
   constructor(
     private phoneService: PhoneService,
@@ -28,6 +31,12 @@ export class PhoneDetailComponent implements OnInit {
 
   getPhone(id: string) {
     return this.phoneService.getProduct(id);
+  }
+
+  changeImg(event: MouseEvent): void {
+    const clickedImgSrc = (event.target as HTMLImageElement).getAttribute('src');
+    const currentImg = document.getElementById('currentImg') as HTMLImageElement;
+    currentImg.setAttribute('src', clickedImgSrc);
   }
 
 }

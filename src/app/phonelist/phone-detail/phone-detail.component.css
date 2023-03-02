@@ -1,0 +1,48 @@
+.bold {
+    font-weight: bold;
+}
+.top-container {
+    display: flex;
+    margin: 2rem 8rem 0 8rem;
+}
+#main-image {
+    padding-right: 7rem;
+    margin: auto;
+}
+#description {
+    padding: 0.5rem 0 0.5rem;
+}
+.image-gallery {
+    display: flex;
+    max-width: 700px;
+    max-height: 700px;
+    flex-wrap: wrap;
+}
+.phone-item-info-small-image {
+    padding: 3rem 3rem 0.5rem 3rem;
+}
+.phone-item-info-small-image img {
+    border: 1px solid black;
+    padding: 1rem;
+}
+.pointer:hover {
+    cursor: pointer;
+}
+.bottom-container {
+    margin: 6rem;
+}
+ul, li {
+    list-style-type: none;
+    padding-left: 0;
+}
+.head-titles {
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-bottom: thick double lightgray;
+    margin: 3rem 0 1rem 0;
+}
+.secondary-titles {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+}

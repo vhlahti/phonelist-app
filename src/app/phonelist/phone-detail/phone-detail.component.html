@@ -1,2 +1,63 @@
-<p>{{ chosenPhone.name }}</p>
-<p>{{ chosenPhone.description }}</p>
+<section class="top-container">
+
+<figure id="main-image"><img id="currentImg" src="{{ 'assets/' + chosenPhone.images[0] }}" alt="..."></figure>
+
+<article class="phone-item-info">
+    <h1 id="name">{{ chosenPhone.name }}</h1>
+    <hr>
+    <p id="description">{{ chosenPhone.description }}</p>
+    <hr>
+
+<div class="image-gallery">
+    <section class="show-images col-4" *ngFor="let image of chosenPhone.images">
+        <figure class="phone-item-info-small-image">
+            <img (click)="changeImg($event)" src="{{ 'assets/' + image }}" alt="{{ phoneId }}" class="pointer img-fluid">
+        </figure>
+    </section>
+</div>
+
+</article>
+
+</section>
+
+<section class="bottom-container">
+
+<ul class="list-container">
+    <li class="head-titles">Availability and networks</li>
+    <ul class="box">
+        <li class="secondary-titles">Availability</li>
+        <li id="availability">{{ chosenPhone.availability }}</li>
+    </ul>
+    <li class="head-titles">Battery</li>
+    <ul class="box">
+        <li class="secondary-titles">Type</li>
+        <li id="type">{{ chosenPhone.battery.type }}</li>
+        <li class="secondary-titles">Talk time</li>
+        <li id="talk-time">{{ chosenPhone.battery.talkTime }}</li>
+        <li class="secondary-titles">Standby time (max)</li>
+        <li id="stand-by-time">{{ chosenPhone.battery.standbyTime }}</li>
+    </ul>
+    <li class="head-titles">Storage and memory</li>
+    <ul class="box">
+        <li class="secondary-titles">RAM</li>
+        <li id="ram">{{ chosenPhone.storage.ram }}</li>
+        <li class="secondary-titles">Internal storage</li>
+        <li id="internal-storage">{{ chosenPhone.storage.flash }}</li>
+    </ul>
+    <li class="head-titles">Connectivity</li>
+    <ul class="box">
+        <li class="secondary-titles">Network support</li>
+        <li id="wifi"><span class="bold">WiFi: </span>{{ chosenPhone.connectivity.wifi }}</li>
+        <li id="bluetooth"><span class="bold">Bluetooth: </span>{{ chosenPhone.connectivity.bluetooth }}</li>
+        <li id="infared">
+            <span class="bold">Infrared: </span>
+            <fa-icon [icon]="chosenPhone.connectivity.infrared ? faCheck : faXmark" [ngClass]="{'true': chosenPhone.connectivity.infrared, 'false': !chosenPhone.connectivity.infrared}"></fa-icon>
+        </li>
+        <li id="gps">
+            <span class="bold">GPS: </span>
+            <fa-icon [icon]="chosenPhone.connectivity.gps ? faCheck : faXmark" [ngClass]="{'true': chosenPhone.connectivity.gps, 'false': !chosenPhone.connectivity.gps}"></fa-icon>
+        </li>
+    </ul>
+</ul>
+
+</section>

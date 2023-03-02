@@ -16,6 +16,12 @@
     margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
+.card {
+    padding: 0.5rem;
+}
+.productImg {
+    padding: 0.5rem;
+}
 
   /* Media Query for Mobile Large */
   @media (max-width: 425px) {

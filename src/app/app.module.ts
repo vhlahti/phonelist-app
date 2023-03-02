@@ -8,6 +8,7 @@ import { PhonelistComponent } from './phonelist/phonelist.component';
 import { PhoneDetailComponent } from './phonelist/phone-detail/phone-detail.component';
 import { PhoneService } from './phone.service';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [PhoneService],
   bootstrap: [AppComponent]
