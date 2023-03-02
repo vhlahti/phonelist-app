@@ -46,3 +46,34 @@ ul, li {
     font-weight: 700;
     margin: 2rem 0 1rem 0;
 }
+
+  /* Media Query for smaller devices than a desktop view */
+  @media (max-width: 1024px) {
+    .top-container {
+        flex-direction: column;
+    }
+    .top-container, .bottom-container {
+        margin: 2rem;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    .phone-item-info-small-image {
+        padding: 0;
+    }
+    .image-gallery {
+        max-width: 900px;
+        max-height: 900px;
+    }
+    .phone-item-info {
+        order: 0;
+    }
+    .image-gallery {
+        order: 1;
+    }
+    #main-image {
+        order: 2;
+        padding: 0;
+    }
+}
