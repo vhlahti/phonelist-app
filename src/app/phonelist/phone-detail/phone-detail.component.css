@@ -15,16 +15,17 @@
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
+    max-width: 700px;
+    max-height: 700px;
 }
 .phone-item-info-small-image {
-    padding: 1rem;
-    margin: 0;
+    padding: 3rem 3rem 0.5rem 3rem;
 }
 .phone-item-info-small-image img {
     border: 1px solid black;
     padding: 1rem;
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 50px;
+    min-width: 50px;
 }
 .pointer:hover {
     cursor: pointer;
@@ -68,6 +69,7 @@ button {
     }
     .image-gallery {
         order: 1;
+        max-width: 4000px;
     }
     .phone-item-info {
         order: 0;
