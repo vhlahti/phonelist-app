@@ -4,13 +4,14 @@ import { PhoneDetailComponent } from './phonelist/phone-detail/phone-detail.comp
 import { PhonelistComponent } from './phonelist/phonelist.component';
 
 const routes: Routes = [
-  {path: '', component: PhonelistComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: PhonelistComponent},
   {path: 'details/:id', component: PhoneDetailComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

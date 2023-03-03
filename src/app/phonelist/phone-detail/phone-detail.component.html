@@ -51,13 +51,19 @@
         <li id="bluetooth"><span class="bold">Bluetooth: </span>{{ chosenPhone.connectivity.bluetooth }}</li>
         <li id="infared">
             <span class="bold">Infrared: </span>
-            <fa-icon [icon]="chosenPhone.connectivity.infrared ? faCheck : faXmark" [ngClass]="{'true': chosenPhone.connectivity.infrared, 'false': !chosenPhone.connectivity.infrared}"></fa-icon>
+            <fa-icon [icon]="chosenPhone.connectivity.infrared ? faCheck : faXmark"
+            [ngClass]="{'true': chosenPhone.connectivity.infrared, 'false': !chosenPhone.connectivity.infrared}"
+            [ngStyle]="{'color':chosenPhone.connectivity.infrared ? 'green' : 'red' }"></fa-icon>
         </li>
         <li id="gps">
             <span class="bold">GPS: </span>
-            <fa-icon [icon]="chosenPhone.connectivity.gps ? faCheck : faXmark" [ngClass]="{'true': chosenPhone.connectivity.gps, 'false': !chosenPhone.connectivity.gps}"></fa-icon>
+            <fa-icon [icon]="chosenPhone.connectivity.gps ? faCheck : faXmark"
+            [ngClass]="{'true': chosenPhone.connectivity.gps, 'false': !chosenPhone.connectivity.gps}"
+            [ngStyle]="{'color': chosenPhone.connectivity.gps ? 'green' : 'red' }"></fa-icon>
         </li>
     </ul>
 </ul>
+
+<a routerLink="/home"><button type="button" class="btn btn-outline-secondary">Back</button></a>
 
 </section>
