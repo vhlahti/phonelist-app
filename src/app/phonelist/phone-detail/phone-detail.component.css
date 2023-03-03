@@ -14,16 +14,17 @@
 }
 .image-gallery {
     display: flex;
-    max-width: 700px;
-    max-height: 700px;
     flex-wrap: wrap;
 }
 .phone-item-info-small-image {
-    padding: 3rem 3rem 0.5rem 3rem;
+    padding: 1rem;
+    margin: 0;
 }
 .phone-item-info-small-image img {
     border: 1px solid black;
     padding: 1rem;
+    min-height: 100px;
+    min-width: 100px;
 }
 .pointer:hover {
     cursor: pointer;
@@ -51,7 +52,7 @@ button {
 }
 
   /* Media Query for smaller devices than a desktop view */
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     .top-container {
         flex-direction: column;
     }
@@ -66,14 +67,11 @@ button {
         padding: 0;
     }
     .image-gallery {
-        max-width: 900px;
-        max-height: 900px;
+        order: 1;
     }
     .phone-item-info {
         order: 0;
-    }
-    .image-gallery {
-        order: 1;
+        margin-bottom: 2rem;
     }
     #main-image {
         order: 2;
