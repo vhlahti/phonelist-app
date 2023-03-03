@@ -4,7 +4,7 @@
 
 <div class="search-container">
 <p id="search-title">Search:</p>
-<input type="text" [(ngModel)]="searchTerm" (input)="onSearchTextChanged()">
+<input type="search" id="seachbar" name="searchbar" [(ngModel)]="searchTerm">
 </div>
 
 <div class="sorter-container">
@@ -21,8 +21,7 @@
 
 <main class="right-column">
 
-<div *ngFor="let product of productList">
-  <div *ngIf="searchTerm === '' || product.name.toLowerCase().includes(searchTerm)">
+<div *ngFor="let product of productList | filter:searchTerm">
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
@@ -36,7 +35,6 @@
           <p class="card-text">{{ product.snippet }}</p>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>

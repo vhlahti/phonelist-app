@@ -44,17 +44,4 @@ export class PhonelistComponent implements OnInit {
     }
   }
 
-  // search filter
-
-  @Output()
-  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
-
-  onSearchTextChanged() {
-    this.searchTextChanged.emit(this.searchTerm);
-  }
-
-  onSearchTextEntered(searchValue: string) {
-    this.searchTerm = searchValue;
-  }
-
 }

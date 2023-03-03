@@ -9,6 +9,7 @@ import { PhoneDetailComponent } from './phonelist/phone-detail/phone-detail.comp
 import { PhoneService } from './phone.service';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    Ng2SearchPipeModule
   ],
   providers: [PhoneService],
   bootstrap: [AppComponent]
